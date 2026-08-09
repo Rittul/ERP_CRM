@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { BASE_URL } from "../utils/constant";
-import "../CSS/Auth.css";
+import api from "../utils/api";
+import "../css/Auth.css";
 import { useNavigate } from "react-router-dom";
 const Auth = ({ onClose }) => {
   const [email, setemailId] = useState("admin@example.com");
@@ -11,12 +10,12 @@ const Auth = ({ onClose }) => {
 
   const handlelogin = async () => {
     try {
-      const res = await axios.post(`${BASE_URL}/login`, { email, password },{ withCredentials: true });
+      const res = await api.post("/login", { email, password });
       if (res.data?.token) {
         localStorage.setItem("token", res.data.token);
       }
       alert("login Successfull!");
-    //   navigate("/apikey");
+      navigate("/dashboard");
     } catch (err) {
       seterror(err.response?.data?.message || "Something went wrong");
       setTimeout(() => {

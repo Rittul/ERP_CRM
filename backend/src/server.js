@@ -7,8 +7,9 @@ const prisma = require("./config/prisma");
 
 app.use(express.json());
 app.use(cookieParser());
+
 app.use(cors({
-    origin: true,
+    origin: "http://localhost:5173",
     credentials: true
 }));
 

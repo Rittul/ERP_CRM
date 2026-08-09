@@ -1,0 +1,609 @@
+/* ======================================
+   CHALLANS PAGE
+   ====================================== */
+
+.challans-page {
+  padding: 32px 40px;
+  background: var(--color-bg);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* ── Loading ── */
+
+.challans-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  font-size: 15px;
+  color: var(--color-muted);
+}
+
+/* ── Header ── */
+
+.challans-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.challans-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 4px 0;
+}
+
+.challans-header p {
+  font-size: 14px;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.add-challan-button {
+  background: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.add-challan-button:hover {
+  background: var(--color-primary-dk);
+  transform: translateY(-1px);
+}
+
+/* ── Messages ── */
+
+.success-message {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.error-message {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/* ── Table Container ── */
+
+.challans-table-container {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.empty-challans {
+  padding: 48px 0;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.challans-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.challans-table thead th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.challans-table tbody td {
+  padding: 13px 16px;
+  color: #1e293b;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.challans-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.challans-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* ── Status Badges ── */
+
+.challan-status {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.challan-status-draft {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.challan-status-confirmed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.challan-status-cancelled {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* ── Row Actions ── */
+
+.challan-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+
+.view-challan-button,
+.edit-challan-button,
+.confirm-challan-button {
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+}
+
+.view-challan-button {
+  color: var(--color-primary);
+  border-color: #c7d2fe;
+}
+
+.view-challan-button:hover {
+  background: #eef2ff;
+}
+
+.edit-challan-button {
+  color: #334155;
+}
+
+.edit-challan-button:hover {
+  background: #f1f5f9;
+}
+
+.confirm-challan-button {
+  color: #15803d;
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+}
+
+.confirm-challan-button:hover {
+  background: #dcfce7;
+}
+
+/* ── Pagination ── */
+
+.challan-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 8px 0 4px;
+}
+
+.pagination-button {
+  padding: 7px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+  color: #334155;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+.pagination-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  font-size: 14px;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+/* ══════════════════════════════════════
+   MODAL — shared base
+   ══════════════════════════════════════ */
+
+.challan-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.challan-modal,
+.challan-details-modal {
+  background: #ffffff;
+  width: 560px;
+  max-width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 14px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.15);
+}
+
+.challan-details-modal {
+  width: 680px;
+}
+
+.challan-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 1;
+}
+
+.challan-modal-header h2 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.close-modal-button {
+  background: none;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.close-modal-button:hover {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+/* ── Create / Edit Form ── */
+
+.challan-form {
+  padding: 20px 24px 24px;
+}
+
+/* ── Add Item section ── */
+
+.challan-add-item {
+  background: #f8fafc;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.challan-add-item h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.challan-item-inputs {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.challan-item-inputs .form-group {
+  flex: 1;
+  min-width: 140px;
+  margin-bottom: 0;
+}
+
+.add-item-button {
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: #ffffff;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+  align-self: flex-end;
+  margin-bottom: 0;
+}
+
+.add-item-button:hover {
+  background: var(--color-primary-dk);
+}
+
+/* ── Challan Items preview table ── */
+
+.challan-items-section {
+  margin-bottom: 20px;
+}
+
+.challan-items-section h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.empty-challan-items {
+  color: var(--color-muted);
+  font-size: 14px;
+  padding: 12px 0;
+}
+
+.challan-items-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.challan-items-table thead th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--color-border);
+  background: #f8fafc;
+}
+
+.challan-items-table tbody td {
+  padding: 10px 12px;
+  color: #1e293b;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.challan-items-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.remove-item-button {
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #dc2626;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.remove-item-button:hover {
+  background: #fef2f2;
+}
+
+/* ── Total row ── */
+
+.challan-total {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--color-border);
+  margin-bottom: 20px;
+}
+
+.challan-total span {
+  font-size: 14px;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.challan-total strong {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* ── Form Actions ── */
+
+.challan-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel-button {
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+  color: #334155;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.cancel-button:hover {
+  background: #f1f5f9;
+}
+
+.save-challan-button {
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  background: var(--color-primary);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.save-challan-button:hover {
+  background: var(--color-primary-dk);
+}
+
+.save-challan-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Challan Details Modal ── */
+
+.challan-details-section {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.challan-details-section:last-child {
+  border-bottom: none;
+}
+
+.challan-details-section h3 {
+  grid-column: 1 / -1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 8px 0;
+}
+
+.challan-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.challan-detail-item span {
+  font-size: 11px;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.challan-detail-item strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* ── Customer snapshot ── */
+
+.customer-snapshot {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  grid-column: 1 / -1;
+}
+
+.customer-snapshot p {
+  font-size: 14px;
+  color: #1e293b;
+  margin: 0;
+}
+
+.customer-snapshot p strong {
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-right: 6px;
+}
+
+/* ── Details actions ── */
+
+.challan-details-actions {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  .challans-page {
+    padding: 20px;
+  }
+
+  .challans-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .challan-details-section {
+    grid-template-columns: 1fr;
+  }
+
+  .challan-item-inputs {
+    flex-direction: column;
+  }
+
+  .add-item-button {
+    width: 100%;
+  }
+}

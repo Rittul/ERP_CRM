@@ -1,0 +1,351 @@
+/* ======================================
+   INVENTORY PAGE
+   ====================================== */
+
+.inventory-page {
+  padding: 32px 40px;
+  background: var(--color-bg);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* ── Loading ── */
+
+.inventory-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  font-size: 15px;
+  color: var(--color-muted);
+}
+
+/* ── Header ── */
+
+.inventory-header {
+  margin-bottom: 28px;
+}
+
+.inventory-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 4px 0;
+}
+
+.inventory-header p {
+  font-size: 14px;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+/* ── Messages ── */
+
+.success-message {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.error-message {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/* ── Product Selection ── */
+
+.inventory-product-selection {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 480px;
+}
+
+.inventory-product-selection label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.product-select {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--color-text);
+  background: #ffffff;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.product-select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* ── Product + Movement grid ── */
+
+.inventory-product-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+/* ── Product Card ── */
+
+.inventory-product-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.product-info h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 4px 0;
+}
+
+.product-info p {
+  font-size: 13px;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.stock-info {
+  display: flex;
+  gap: 24px;
+}
+
+.stock-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stock-item span {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stock-item strong {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+/* ── Movement Form Card ── */
+
+.inventory-movement-section {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.section-header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section-header h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.inventory-movement-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 9px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--color-text);
+  outline: none;
+  font-family: inherit;
+  background: #ffffff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.stock-movement-button {
+  margin-top: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+  align-self: flex-start;
+}
+
+.stock-movement-button:hover {
+  background: var(--color-primary-dk);
+  transform: translateY(-1px);
+}
+
+.stock-movement-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── History Section (full width) ── */
+
+.inventory-history-section {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  grid-column: 1 / -1;
+}
+
+.inventory-table-container {
+  overflow-x: auto;
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.inventory-table thead th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.inventory-table tbody td {
+  padding: 12px 14px;
+  color: #1e293b;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.inventory-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.inventory-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* ── Movement Type Badges ── */
+
+.movement-in,
+.movement-out {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.movement-in {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.movement-out {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* ── Empty State ── */
+
+.empty-movements {
+  padding: 40px 0;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .inventory-product-section {
+    grid-template-columns: 1fr;
+  }
+
+  .inventory-history-section {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .inventory-page {
+    padding: 20px;
+  }
+
+  .stock-info {
+    gap: 16px;
+  }
+}

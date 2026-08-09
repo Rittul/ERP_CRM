@@ -1,0 +1,103 @@
+/* ======================================
+   APP-LEVEL LAYOUT
+   Sidebar (fixed) + Scrollable content
+   ====================================== */
+
+/* ── Layout shell ── */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Content area: sits to the right of the fixed sidebar ── */
+.app-content {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  min-height: 100vh;
+  background: var(--color-bg);
+  overflow-y: auto;
+  transition: margin-left 0.25s ease;
+}
+
+/* ── Mobile overlay backdrop ── */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 99;
+}
+
+/* ── Hamburger toggle (mobile only) ── */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 200;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--color-primary);
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35);
+  transition: background 0.15s ease;
+  cursor: pointer;
+}
+
+.sidebar-toggle:hover {
+  background: var(--color-primary-dk);
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════ */
+
+/* Tablet (≤ 900px) — shrink sidebar */
+@media (max-width: 900px) {
+  .app-content {
+    margin-left: 200px;
+  }
+}
+
+/* Mobile (≤ 640px) — slide-in sidebar */
+@media (max-width: 640px) {
+  /* Toggle button visible */
+  .sidebar-toggle {
+    display: flex;
+  }
+
+  /* Content full width */
+  .app-content {
+    margin-left: 0;
+  }
+
+  /* Sidebar hidden off-screen by default */
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    z-index: 100;
+  }
+
+  /* When open */
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  /* Overlay shows when sidebar is open */
+  .sidebar-overlay.active {
+    display: block;
+  }
+
+  /* Add top padding to pages so content isn't hidden under toggle */
+  .dashboard-page,
+  .customers-page,
+  .products-page {
+    padding-top: 64px !important;
+  }
+}
