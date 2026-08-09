@@ -360,4 +360,5 @@
   color: #0f172a;
   outline: none;
   font-family: inherit;
-  transition: border-color 0.15s ease, box-shadow
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
