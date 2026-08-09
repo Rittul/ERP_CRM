@@ -41,7 +41,7 @@ Category/warehouse handling
 Stock movement API
 Stock IN
 Stock OUT
-Low-stock filtering            
+Low-stock filtering            ***********done phase 4*******
 
 Phase 5 — Challan ⭐
 Create draft challan
