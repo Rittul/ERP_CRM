@@ -124,59 +124,69 @@ ProductRouter.post("/",userauth,roleauth("ADMIN", "WAREHOUSE"),
 );
 
 // get product
-ProductRouter.get("/",userauth,
-    async (req, res) => {
-        try {
+ProductRouter.get("/", userauth, async (req, res) => {
+    try {
 
-            const { search } = req.query;
+        const { search, lowStock } = req.query;
 
-            const products = await prisma.product.findMany({
-                where: search
-                    ? {
-                        OR: [
-                            {
-                                name: {
-                                    contains: search,
-                                    mode: "insensitive"
-                                }
-                            },
-                            {
-                                sku: {
-                                    contains: search,
-                                    mode: "insensitive"
-                                }
+        // Get products
+        const products = await prisma.product.findMany({
+            where: search
+                ? {
+                    OR: [
+                        {
+                            name: {
+                                contains: search,
+                                mode: "insensitive"
                             }
-                        ]
-                    }
-                    : undefined,
-
-                include: {
-                    category: true,
-                    warehouse: true
-                },
-
-                orderBy: {
-                    createdAt: "desc"
+                        },
+                        {
+                            sku: {
+                                contains: search,
+                                mode: "insensitive"
+                            }
+                        }
+                    ]
                 }
-            });
+                : {},
 
-            return res.status(200).json({
-                success: true,
-                count: products.length,
-                products
-            });
+            include: {
+                category: true,
+                warehouse: true
+            },
 
-        } catch (error) {
+            orderBy: {
+                createdAt: "desc"
+            }
+        });
 
-            console.error(error);
+        // Low stock filter
+        let filteredProducts = products;
 
-            return res.status(500).json({
-                success: false,
-                message: "Internal server error"
-            });
+        if (lowStock === "true") {
+            filteredProducts = products.filter(
+                product =>
+                    product.currentStock <=
+                    product.minimumStock
+            );
         }
+
+        return res.status(200).json({
+            success: true,
+            count: filteredProducts.length,
+            products: filteredProducts
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+        return res.status(500).json({
+            success: false,
+            message: "Internal server error"
+        });
     }
-);
+});
 
 // get product by id
 ProductRouter.get("/:id",userauth,
