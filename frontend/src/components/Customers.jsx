@@ -152,10 +152,17 @@ const Customers = () => {
 
             console.error(error);
 
-            setError(
-                error.response?.data?.message ||
-                "Failed to save customer"
-            );
+            const status = error.response?.status;
+            const msg    = error.response?.data?.message;
+
+            // Close the modal so the error banner is visible at the top
+            setShowForm(false);
+
+            if (status === 403) {
+                setError(msg || "Access Denied: You do not have permission to perform this action.");
+            } else {
+                setError(msg || "Failed to save customer");
+            }
 
         }
     };
@@ -305,10 +312,16 @@ const Customers = () => {
 
             console.error(error);
 
-            setError(
-                error.response?.data?.message ||
-                "Failed to add follow-up"
-            );
+            const status = error.response?.status;
+            const msg    = error.response?.data?.message;
+
+            if (status === 403) {
+                // Close details modal so banner is visible
+                closeDetails();
+                setError(msg || "Access Denied: You do not have permission to add follow-ups.");
+            } else {
+                setError(msg || "Failed to add follow-up");
+            }
 
         }
     };

@@ -3,8 +3,8 @@ import api from "../utils/api";
 import "../css/Auth.css";
 import { useNavigate } from "react-router-dom";
 const Auth = ({ onClose }) => {
-  const [email, setemailId] = useState("admin@example.com");
-  const [password, setPassword] = useState("Password123");
+  const [email, setemailId] = useState("");
+  const [password, setPassword] = useState("");
   const [error, seterror] = useState("");
   const navigate = useNavigate();
 

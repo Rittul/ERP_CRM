@@ -77,12 +77,10 @@ const Products = () => {
         }
     };
 
-
     useEffect(() => {
 
         fetchProducts();
-
-    }, []);
+    }, [lowStock]);
 
 
     // search
@@ -229,10 +227,14 @@ const Products = () => {
 
             console.error(error);
 
-            setError(
-                error.response?.data?.message ||
-                "Failed to save product"
-            );
+            const status = error.response?.status;
+            const msg    = error.response?.data?.message;
+
+            if (status === 403) {
+                setError(msg || "Access Denied: You do not have permission to perform this action.");
+            } else {
+                setError(msg || "Failed to save product");
+            }
 
         }
 
@@ -351,17 +353,9 @@ const Products = () => {
                     <input
                         type="checkbox"
                         checked={lowStock}
-                        onChange={(e) => {
-
-                            setLowStock(
-                                e.target.checked
-                            );
-
-                            setTimeout(() => {
-                                fetchProducts();
-                            }, 0);
-
-                        }}
+                        onChange={(e) =>
+                            setLowStock(e.target.checked)
+                        }
                     />
 
                     Low Stock Only
