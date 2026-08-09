@@ -436,6 +436,7 @@ The exported Postman collection is included in the repository root:
 ```
 erp_crm.postman_collection.json
 ```
+Live collection (view online): https://rittulraj-724273.postman.co/workspace/Rittul-Raj's-Workspace~1e407ea9-94d0-4878-87b6-ede6d2767781/collection/57227147-94cd954b-b7d2-4d51-b00f-0ea136fb26a7?action=share&creator=57227147&live=mlu7z0ou47
 
 To use it: open Postman → Import → select `erp_crm.postman_collection.json` from the repo. All requests are pre-configured with the routes below; just set your own `baseUrl` variable to whichever environment you're testing against.
 
