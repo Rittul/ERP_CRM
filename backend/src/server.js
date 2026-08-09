@@ -8,8 +8,13 @@ const prisma = require("./config/prisma");
 app.use(express.json());
 app.use(cookieParser());
 
+// app.use(cors({
+//     origin: "http://localhost:5173",
+//     credentials: true
+// }));
+
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: process.env.FRONTEND_URL,
     credentials: true
 }));
 
@@ -31,6 +36,6 @@ app.use("/challan",challanRouter);
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT,(req,res)=>{
+app.listen(PORT, "0.0.0.0", () => {
     console.log(`server listening on port ${PORT}`);
-})
+});
