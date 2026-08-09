@@ -1,0 +1,1157 @@
+/* =========================================================
+   DOCUMENTATION PAGE
+   ========================================================= */
+
+.documentation-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #172033;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.documentation-header {
+  padding: 70px 8%;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(37, 99, 235, 0.28),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #0f172a 0%,
+      #172554 50%,
+      #111827 100%
+    );
+
+  color: white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.documentation-header > div:first-child {
+  max-width: 850px;
+}
+
+.documentation-label {
+  margin: 0 0 12px;
+
+  color: #60a5fa;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.documentation-header h1 {
+  margin: 0;
+
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+}
+
+.documentation-subtitle {
+  max-width: 760px;
+
+  margin: 22px 0 0;
+
+  color: #cbd5e1;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   HEADER BUTTON
+   ========================================================= */
+
+.documentation-actions {
+  flex-shrink: 0;
+}
+
+.documentation-actions a {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 13px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9px;
+
+  background: #2563eb;
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.documentation-actions a:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.documentation-content {
+  width: min(1200px, 90%);
+
+  margin: 0 auto;
+
+  padding: 60px 0 80px;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.doc-section {
+  margin-bottom: 65px;
+}
+
+.doc-section h2 {
+  margin: 0 0 22px;
+
+  color: #0f172a;
+
+  font-size: 29px;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+}
+
+.doc-section h3 {
+  margin: 30px 0 12px;
+
+  color: #1e293b;
+
+  font-size: 20px;
+}
+
+.doc-section p {
+  max-width: 950px;
+
+  margin: 0 0 16px;
+
+  color: #475569;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.doc-section li {
+  color: #475569;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   TECHNOLOGY TABLE
+   ========================================================= */
+
+.tech-table {
+  overflow: hidden;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+
+  background: white;
+
+  box-shadow:
+    0 8px 30px rgba(15, 23, 42, 0.04);
+}
+
+.tech-table > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 17px 22px;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tech-table > div:last-child {
+  border-bottom: none;
+}
+
+.tech-table span {
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+.tech-table strong {
+  color: #172033;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   ARCHITECTURE
+   ========================================================= */
+
+.architecture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  padding: 20px 0;
+
+  flex-wrap: wrap;
+}
+
+.architecture-box {
+  width: 230px;
+
+  padding: 28px 22px;
+
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+
+  background: white;
+
+  text-align: center;
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.architecture-box:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 14px 35px rgba(15, 23, 42, 0.08);
+}
+
+.architecture-box small {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.architecture-box strong {
+  display: block;
+
+  color: #172033;
+
+  font-size: 18px;
+}
+
+.architecture-box span {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.architecture-arrow {
+  color: #2563eb;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ROLES
+   ========================================================= */
+
+.roles {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-top: 20px;
+}
+
+.role-card {
+  padding: 24px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 13px;
+
+  background: white;
+
+  box-shadow:
+    0 5px 20px rgba(15, 23, 42, 0.04);
+}
+
+.role-card h3 {
+  margin: 0 0 8px;
+
+  color: #2563eb;
+
+  font-size: 18px;
+}
+
+.role-card p {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   FLOW DIAGRAMS
+   ========================================================= */
+
+.flow {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 20px 0;
+  padding: 25px;
+
+  border-radius: 12px;
+
+  background: #0f172a;
+
+  color: white;
+
+  overflow-x: auto;
+}
+
+.flow div {
+  flex-shrink: 0;
+
+  padding: 9px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+
+  background: #1e293b;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.flow span {
+  flex-shrink: 0;
+
+  color: #60a5fa;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   API DOCUMENTATION HEADER
+   ========================================================= */
+
+.api-documentation {
+  margin-top: 80px;
+}
+
+.api-documentation-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 30px;
+
+  margin-bottom: 35px;
+
+  padding-bottom: 28px;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.api-documentation-heading h2 {
+  margin-bottom: 10px;
+}
+
+.api-documentation-heading p {
+  margin-bottom: 0;
+}
+
+.api-base-url {
+  min-width: 300px;
+
+  padding: 15px 17px;
+
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+
+  background: #eff6ff;
+}
+
+.api-base-url span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.api-base-url code {
+  display: block;
+
+  overflow-x: auto;
+
+  color: #1d4ed8;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   API CATEGORY
+   ========================================================= */
+
+.api-category {
+  margin-bottom: 55px;
+}
+
+.api-category-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 22px;
+}
+
+.api-category-heading h2 {
+  margin: 0 0 4px;
+
+  font-size: 23px;
+}
+
+.api-category-heading p {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+.category-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: #dbeafe;
+  color: #1d4ed8;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   API ENDPOINT CARD
+   ========================================================= */
+
+.api-endpoint {
+  margin-bottom: 20px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+
+  background: white;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 6px 25px rgba(15, 23, 42, 0.04);
+}
+
+.api-endpoint-header {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 17px 20px;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  background: #f8fafc;
+}
+
+.api-method {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 64px;
+
+  padding: 6px 10px;
+
+  border-radius: 6px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+.api-method.get {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.api-method.post {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.api-method.put {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.api-method.patch {
+  background: #f3e8ff;
+  color: #7e22ce;
+}
+
+.api-method.delete {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.api-path {
+  overflow-x: auto;
+
+  color: #172033;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   API ENDPOINT CONTENT
+   ========================================================= */
+
+.api-endpoint > h3 {
+  margin: 22px 20px 6px;
+
+  color: #111827;
+
+  font-size: 19px;
+}
+
+.api-description {
+  margin: 0 20px 16px !important;
+
+  color: #64748b !important;
+
+  font-size: 14px !important;
+}
+
+.api-meta {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  padding: 0 20px 20px;
+}
+
+.api-meta span {
+  padding: 7px 10px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+
+  background: #f8fafc;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+.api-meta strong {
+  color: #334155;
+}
+
+
+/* =========================================================
+   API REQUEST / RESPONSE BLOCK
+   ========================================================= */
+
+.api-block {
+  padding: 0 20px 20px;
+}
+
+.api-block h4 {
+  margin: 0 0 9px;
+
+  color: #334155;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.api-block pre,
+.api-errors pre {
+  margin: 0;
+
+  padding: 17px 18px;
+
+  border: 1px solid #1e293b;
+  border-radius: 9px;
+
+  background: #0f172a;
+
+  color: #e2e8f0;
+
+  overflow-x: auto;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  font-size: 13px;
+  line-height: 1.65;
+
+  white-space: pre;
+}
+
+.api-block code,
+.api-errors code {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   RESPONSE TITLES
+   ========================================================= */
+
+.success-title {
+  color: #15803d !important;
+}
+
+.error-title {
+  color: #b91c1c !important;
+}
+
+
+/* =========================================================
+   ERROR RESPONSES
+   ========================================================= */
+
+.api-errors {
+  padding: 20px;
+
+  border-top: 1px solid #e2e8f0;
+
+  background: #fffafa;
+}
+
+.api-errors > h4 {
+  margin: 0 0 14px;
+
+  font-size: 13px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.api-error {
+  display: grid;
+
+  grid-template-columns: 55px 1fr;
+
+  gap: 13px;
+
+  margin-bottom: 13px;
+
+  padding: 13px;
+
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+
+  background: white;
+}
+
+.api-error:last-child {
+  margin-bottom: 0;
+}
+
+.error-status {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 6px;
+
+  border-radius: 6px;
+
+  background: #fee2e2;
+  color: #b91c1c;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.error-content {
+  min-width: 0;
+}
+
+.error-content > strong {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #334155;
+
+  font-size: 13px;
+}
+
+.error-content pre {
+  border-color: #334155;
+}
+
+
+/* =========================================================
+   BUSINESS RULES
+   ========================================================= */
+
+.business-rule {
+  margin-top: 20px;
+}
+
+.business-rule .flow {
+  margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   NOTE BOX
+   ========================================================= */
+
+.doc-note {
+  margin-top: 20px !important;
+  padding: 16px 18px;
+
+  border-left: 4px solid #2563eb;
+  border-radius: 0 8px 8px 0;
+
+  background: #eff6ff;
+
+  color: #334155 !important;
+
+  font-size: 14px !important;
+}
+
+
+/* =========================================================
+   DATABASE ENTITIES
+   ========================================================= */
+
+.entity-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-top: 20px;
+}
+
+.entity-list span {
+  padding: 8px 13px;
+
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+
+  background: #eff6ff;
+  color: #1d4ed8;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   CODE BLOCKS
+   ========================================================= */
+
+.doc-section > pre,
+.deployment-step pre {
+  margin-top: 15px;
+
+  padding: 22px;
+
+  border-radius: 10px;
+
+  background: #0f172a;
+  color: #e2e8f0;
+
+  overflow-x: auto;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   DEPLOYMENT
+   ========================================================= */
+
+.deployment-step {
+  margin-bottom: 18px;
+
+  padding: 22px 24px;
+
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #2563eb;
+
+  border-radius: 0 11px 11px 0;
+
+  background: white;
+
+  box-shadow:
+    0 4px 18px rgba(15, 23, 42, 0.03);
+}
+
+.deployment-step strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #172033;
+
+  font-size: 17px;
+}
+
+.deployment-step p {
+  margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   TESTING LIST
+   ========================================================= */
+
+.check-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px 25px;
+
+  margin: 0;
+
+  padding-left: 20px;
+}
+
+.check-list li::marker {
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   LIVE APPLICATION
+   ========================================================= */
+
+.live-application-card {
+  padding: 28px;
+
+  border: 1px solid #bfdbfe;
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eff6ff,
+      #ffffff
+    );
+}
+
+.live-application-card p {
+  margin-bottom: 8px;
+}
+
+.live-application-card a {
+  color: #2563eb;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.live-application-card a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   DOCUMENTATION FOOTER
+   ========================================================= */
+
+.documentation-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  padding-top: 30px;
+
+  border-top: 1px solid #e2e8f0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.documentation-footer strong {
+  color: #172033;
+}
+
+.documentation-footer a {
+  color: #2563eb;
+
+  text-decoration: none;
+}
+
+.documentation-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.documentation-page ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.documentation-page ::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+
+.documentation-page ::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+
+  background: #94a3b8;
+}
+
+.documentation-page ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .documentation-header {
+    padding: 50px 6%;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .documentation-actions {
+    width: 100%;
+  }
+
+  .documentation-actions a {
+    width: fit-content;
+  }
+
+  .documentation-content {
+    width: 88%;
+
+    padding-top: 45px;
+  }
+
+  .roles {
+    grid-template-columns: 1fr;
+  }
+
+  .api-documentation-heading {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .api-base-url {
+    width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+  }
+
+  .architecture {
+    flex-direction: column;
+  }
+
+  .architecture-arrow {
+    transform: rotate(90deg);
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .documentation-header h1 {
+    font-size: 34px;
+  }
+
+  .documentation-subtitle {
+    font-size: 15px;
+  }
+
+  .doc-section {
+    margin-bottom: 48px;
+  }
+
+  .doc-section h2 {
+    font-size: 25px;
+  }
+
+  .tech-table > div {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 4px;
+  }
+
+  .architecture-box {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+  .flow {
+    justify-content: flex-start;
+
+    padding: 18px;
+
+    flex-wrap: nowrap;
+  }
+
+  .api-endpoint-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .api-path {
+    max-width: 100%;
+
+    font-size: 12px;
+  }
+
+  .api-error {
+    grid-template-columns: 1fr;
+  }
+
+  .error-status {
+    width: fit-content;
+  }
+
+  .check-list {
+    grid-template-columns: 1fr;
+  }
+
+  .documentation-footer {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+}

@@ -1,0 +1,125 @@
+{
+  "info": {
+    "_postman_id": "94cd954b-b7d2-4d51-b00f-0ea136fb26a7",
+    "name": "erp_crm",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57227147",
+    "_collection_link": "https://go.postman.co/collection/57227147-94cd954b-b7d2-4d51-b00f-0ea136fb26a7?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "login",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "cretae customer",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc4NjE5MzYwMSwiZXhwIjoxNzg2MjgwMDAxfQ.eCQ-g_50ciJb6aWrnzTMjaMbhnwzXq35Qam9vcEVee4"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Rahul Sharma\",\r\n  \"mobile\": \"9876543210\",\r\n  \"email\": \"rahul@example.com\",\r\n  \"businessName\": \"ABC Traders\",\r\n  \"gstNumber\": \"09ABCDE1234F1Z5\",\r\n  \"customerType\": \"WHOLESALE\",\r\n  \"address\": \"Delhi\",\r\n  \"status\": \"ACTIVE\",\r\n  \"followUpDate\": \"2026-08-15\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "customers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update customers",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "add follow up",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "get customer",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "create product",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "get product",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "inventory",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "make challan",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "update and confirm",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "supabase_service_role_api_key_0dwc",
+      "secret": true
+    }
+  ]
+}

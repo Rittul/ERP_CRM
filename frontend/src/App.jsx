@@ -7,12 +7,13 @@ import Products from './components/Products'
 import Inventory from './components/Inventory'
 import Challans from './components/Challans'
 import Layout from './components/Layout'
-
+import Documentation from "./components/Documentation";
 function App() {
   return (
     <Routes>
       {/* Public route */}
       <Route path="/" element={<Auth />} />
+      <Route path="/documentation" element={<Documentation />} />
 
       {/* Protected routes — all wrapped in Layout (sidebar + content) */}
       <Route
