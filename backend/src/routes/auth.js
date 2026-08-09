@@ -3,13 +3,12 @@ const authRouter=express.Router();
 const jwt=require("jsonwebtoken");
 const bcrypt=require("bcrypt");
 const prisma = require("../config/prisma");
-const validatedata= require("../utils/validation");
+const validator=require("validator")
 
 
 authRouter.post("/login", async (req, res) => {
 
   try {
-    validatedata(req);
     const { email, password } = req.body;
 
     // validation
@@ -18,7 +17,12 @@ authRouter.post("/login", async (req, res) => {
         message: "All fields required"
       });
     }
-
+    if(!validator.isEmail(email)){
+         return res.status(400).json({
+          success: false,
+          message: "Enter a valid email"
+        });
+    }
     // find user
     const user = await prisma.user.findUnique({
       where: {
