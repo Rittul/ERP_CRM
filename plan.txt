@@ -1,0 +1,108 @@
+will define pahse here
+
+Overall project plan
+
+We'll build this in the following order.
+
+Phase 1 — Database design ⭐ NOW
+Identify entities
+Convert requirements into tables
+Define relationships
+Normalize to 3NF
+Decide primary/foreign keys
+Decide constraints/enums
+Create PostgreSQL database
+Create Prisma schema
+Run migrations
+Verify database            ***********done phase 1*******
+
+Phase 2 — Backend foundation
+Create Express project
+Environment variables
+Prisma setup
+Express structure
+Error handling
+Validation
+Authentication
+JWT middleware
+Role-based middleware       ***********done phase 2*******
+
+Phase 3 — Customer module
+Create customer API
+Update customer
+Get customers
+Search/filter
+Customer details
+Follow-up notes             ***********done phase 3*******
+
+Phase 4 — Product + inventory
+Product CRUD
+Category/warehouse handling
+Stock movement API
+Stock IN
+Stock OUT
+Low-stock filtering            
+
+Phase 5 — Challan ⭐
+Create draft challan
+Add multiple products
+Product snapshot
+Auto challan number
+Confirm challan
+Validate stock
+Database transaction
+Reduce stock
+Create stock movements
+Prevent negative stock
+Cancel challan
+
+Phase 6 — Frontend
+React setup
+Login
+Protected routes
+Layout/sidebar
+Customers
+Products
+Inventory
+Challans
+Final UI cleanup
+
+Phase 7 — Testing
+Test every API
+Test role restrictions
+Test invalid input
+Test insufficient stock
+Test draft/confirm/cancel
+Test concurrent-ish stock scenarios
+Test frontend flows
+
+Phase 8 — Deployment
+Deploy PostgreSQL
+Deploy backend
+Deploy frontend
+Configure environment variables
+Test production
+
+Phase 9 — Docker
+Dockerize backend
+Dockerize frontend
+Docker Compose
+Verify everything locally
+
+Apis to make
+
+basics:
+implement user role based auth
+data validations
+middleware 
+
+customers.....
+add , edit , serach , add Follow up
+
+prodcust....
+add ,edit 
+keep track of logs in/out 
+
+sales / challan 
+
+same log apis (mentioned in pdf)
